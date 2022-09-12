@@ -5,6 +5,8 @@ import Search from "./Components/Search";
 import Dropdown from "./Components/Dropdown";
 import Translate from "./Components/Translate";
 import Exercise from "./Components/Exercise";
+import Route from "./Components/Route";
+import Header from "./Components/Header";
 
 const items = [
     {
@@ -57,19 +59,81 @@ const items = [
 //     );
 //  }
 
+// const showAccordian = ()=>{
+//     if (window.location.pathname === "/"){
+//         return <Accordion items={items}/>
+//     }
+// }
 
+// const showList = ()=>{
+//     if(window.location.pathname === "/list"){
+//         return <Search/>
+//     }
+// }
+
+// const showDropdown = ()=>{
+//     if(window.location.pathname === "/dropdown"){
+//         return <Dropdown options={options}/>
+//     }
+// }
+
+// const showTranslate = ()=>{
+//     if(window.location.pathname === "/translate"){
+//         return <Translate/>
+//     }
+// }
 
 
 
 const App = ()=>{
+    const [selected, setSelected] = useState(options[0]);
     return(
         <div>
             {/* <Search/>  */}
             {/* <Accordion items={items}/> */}
             {/* <CurrentCount/> */}
             {/* <Dropdown options={options}/> */}
-            <Translate/>
+            {/* <Translate/> */}
             {/* <Exercise/> */}
+
+            <Header/>
+
+            <Route path="/">
+                <Accordion items={items}/>
+            </Route>
+            <Route path="/list">
+                <Search/>
+            </Route>
+            <Route path="/dropdown">
+                <Dropdown
+                    label="Select a Color"
+                    options={options}
+                    selected={selected}
+                    onSelectedChange={setSelected}
+                />
+            </Route>
+            <Route path="/translate">
+                <Translate/>
+            </Route>
+
+
+
+
+            {/* {showAccordian()}
+            {showList()}
+            {showDropdown()}
+            {showTranslate()} */}
+
+
+
+
+
+
+
+
+
+
+
         </div>
     )
 
