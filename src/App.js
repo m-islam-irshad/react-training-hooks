@@ -36,15 +36,21 @@ const items = [
 
  export default ()=>{
     const [selected, setSelected] = useState(options[0]);
+    const [showDropdown, setShowDropdown] = useState(true);
 
     return (
         <div>
+            <button onClick={()=>{
+                setShowDropdown(!showDropdown)
+            }}>Toggle Dropdown</button>
+            { showDropdown ? 
             <Dropdown 
                 selected={selected} 
                 onSelectedChange = {setSelected}
                 options={options}
 
-                />
+                /> : null
+            }
         </div>
     );
  }
@@ -59,7 +65,7 @@ const items = [
 //             {/* <Search/>  */}
 //             {/* <Accordion items={items}/> */}
 //             {/* <CurrentCount/> */}
-//             <Dropdown options={options}/>
+//             {/* <Dropdown options={options}/> */}
 //         </div>
 //     )
 
