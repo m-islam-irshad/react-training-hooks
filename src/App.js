@@ -3,6 +3,8 @@ import Accordion from "./Components/Accordion";
 import CurrentCount from "./Components/CurrentCount";
 import Search from "./Components/Search";
 import Dropdown from "./Components/Dropdown";
+import Translate from "./Components/Translate";
+import Exercise from "./Components/Exercise";
 
 const items = [
     {
@@ -34,42 +36,44 @@ const items = [
     }
  ];
 
- export default ()=>{
-    const [selected, setSelected] = useState(options[0]);
-    const [showDropdown, setShowDropdown] = useState(true);
+//  export default ()=>{
+//     const [selected, setSelected] = useState(options[0]);
+//     const [showDropdown, setShowDropdown] = useState(true);
 
-    return (
-        <div>
-            <button onClick={()=>{
-                setShowDropdown(!showDropdown)
-            }}>Toggle Dropdown</button>
-            { showDropdown ? 
-            <Dropdown 
-                selected={selected} 
-                onSelectedChange = {setSelected}
-                options={options}
-
-                /> : null
-            }
-        </div>
-    );
- }
-
-
-
-
-
-// const App = ()=>{
-//     return(
+//     return (
 //         <div>
-//             {/* <Search/>  */}
-//             {/* <Accordion items={items}/> */}
-//             {/* <CurrentCount/> */}
-//             {/* <Dropdown options={options}/> */}
+//             <button onClick={()=>{
+//                 setShowDropdown(!showDropdown)
+//             }}>Toggle Dropdown</button>
+//             { showDropdown ? 
+//             <Dropdown 
+//                 selected={selected} 
+//                 onSelectedChange = {setSelected}
+//                 options={options}
+
+//                 /> : null
+//             }
 //         </div>
-//     )
+//     );
+//  }
 
-// }
 
-// export default  App
+
+
+
+const App = ()=>{
+    return(
+        <div>
+            {/* <Search/>  */}
+            {/* <Accordion items={items}/> */}
+            {/* <CurrentCount/> */}
+            {/* <Dropdown options={options}/> */}
+            <Translate/>
+            {/* <Exercise/> */}
+        </div>
+    )
+
+}
+
+export default  App
 
