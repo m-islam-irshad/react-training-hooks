@@ -34,36 +34,36 @@ const items = [
     }
  ];
 
-//  export default ()=>{
-//     const [selected, setSelected] = useState(options[0]);
+ export default ()=>{
+    const [selected, setSelected] = useState(options[0]);
 
-//     return (
-//         <div>
-//             <Dropdown 
-//                 selected={selected} 
-//                 onSelectedChange = {setSelected}
-//                 options={options}
-
-//                 />
-//         </div>
-//     );
-//  }
-
-
-
-
-
-const App = ()=>{
-    return(
+    return (
         <div>
-            {/* <Search/>  */}
-            {/* <Accordion items={items}/> */}
-            {/* <CurrentCount/> */}
-            <Dropdown options={options}/>
+            <Dropdown 
+                selected={selected} 
+                onSelectedChange = {setSelected}
+                options={options}
+
+                />
         </div>
-    )
+    );
+ }
 
-}
 
-export default  App
+
+
+
+// const App = ()=>{
+//     return(
+//         <div>
+//             {/* <Search/>  */}
+//             {/* <Accordion items={items}/> */}
+//             {/* <CurrentCount/> */}
+//             <Dropdown options={options}/>
+//         </div>
+//     )
+
+// }
+
+// export default  App
 
